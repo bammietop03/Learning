@@ -1,7 +1,6 @@
-name = "bamiwo adebayo"
+def hello(**kwargs):
+        print("Hello", end=" ")
+        for key,value in kwargs.items():
+            print(value, end=" ")
 
-first_name = name[:7].upper() # bamiwo will be changed to uppercase
-last_name = name[7:].lower() # adebayo will be changed to lowercase
-
-print(first_name) # output - BAMIWO
-print(last_name) # output - adebayo
+hello(title="Mr.",first="Bamiwo",last="Adebayo")

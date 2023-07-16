@@ -19,6 +19,13 @@
 * [Set](#set-in-python)
 * [Dictionaries](#dictionaries-in-python)
 * [Index Opereator](#index-operator-in-python)
+* [Functions](#functions)
+* [Return Statement](#return-function)
+* [Keyword Argument](#keyword-argument)
+* [Nested Function](#nested-functions-calls)
+* [Scope..Global Variable](#scope)
+* [*args](#args)
+* [**kwargs](#kwargs)
 
 
 
@@ -265,7 +272,106 @@ fast because they use hashing, allow us to access a value quickly
 
     first_name = name[:7].upper() # bamiwo will be changed to uppercase
     last_name = name[8:].lower() # adebayo will be changed to lowercase
-    
+
     print(first_name) # output - BAMIWO
     print(last_name) # output - adebayo
 
+## FUNCTIONS
+A function is a bolck of code which is executed only when it is called
+
+    def hello(name):
+        print("Hello "+name)
+        print("Have a nice day")
+
+    hello("Bamiwo")
+
+Passing two parameters
+
+    def hello(first_name,last_name,age):
+        print("Hello "+first_name+" "+last_name)
+        print("YOur age is "+str(age)+" years old")
+        print("Have a nice day")
+
+    hello("Bamiwo","Adebayo",26)
+
+## RETURN FUNCTION
+Function send python values/objects back to the caller.
+
+These values/objects are known as the function's return value
+
+    def multiply(num1,num2):
+        result = num1 * num2
+        return result
+
+    x = multiply(5,4)
+    print(x)
+
+## KEYWORD ARGUMENT
+Argument preceded by an identifier when we pass them to a function\n
+
+The order of the argument doesn't matter, unlike positional arguments
+
+python knows the names of the arguments that our function receives
+
+    def hello(first,middle,last):
+        print("Hello "+first+" "+middle+" "+last)
+
+    hello(last="Ade",first="Bammie",middle="moses")
+
+## NESTED FUNCTIONS CALLS
+Function calls inside other function calls
+
+    print(round(abs(float(input("Enter a whole positive number: ")))))
+
+## SCOPE
+The region that a variable is recognized
+
+A variable is only available from inside the region it is created
+
+A global and locally scoped version can be created
+
+    name = "Bammie"  # Global Variable
+
+    def display_name():
+        name = "Moses"  # Local Variable
+        print(name)
+
+    display_name()
+    print(name)
+
+## *args
+Parameter that will pack all arguments into a tuple
+
+Useful so that a function can accept a varying amount of argument
+
+    def add(*args):         # any word can be used with * not nessesary args  e.g *number 
+        sum = 0
+        for i in args:
+            sum += i
+        return sum
+
+    print(add(1,2,3,4,4,6,5))
+
+Since it is a tuple we can't change it value but we can by passing the tuple to a list
+
+    def add(*args):        
+        sum = 0
+        numbers = list(args)
+        numbers[0] = 9
+        for i in args:
+            sum += i
+        return sum
+
+    print(add(1,2,3,4,4,6,5))
+
+## **kwargs
+Parameter that will pack all arguments into a dictionary.
+
+Usefull so that a function can accept a varying amount of kryword arguments
+
+    def hello(**kwargs):
+        print("Hello", end=" ")
+        for key,value in kwargs.item():
+            print(value, end=" ")
+
+    hello(title="Mr.",first="Bamiwo",last="Adebayo")
