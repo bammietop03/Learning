@@ -34,7 +34,7 @@ slicing in python
 
 we can use slice(start,stop,step) or name[start:stop:step]
 name = "bamiwo"
-
+[]
 slice_name = name[1:3] - starts at index 1 and stop at index 3
 slice_name = name[]::2] - [0:end:2]output is bmw
 slice_name = name[::-1] - [0:end:-1] will reverse the string
