@@ -15,7 +15,7 @@
 * [Loop Controls](#loop-controls)
 * [List](#list-in-python)
 * [2D List](#2d-list)
-* [Tuples](Tuples-in-python)
+* [Tuples](#tuples-in-python)
 * [Set](#set-in-python)
 * [Dictionaries](#dictionaries-in-python)
 * [Index Opereator](#index-operator-in-python)
