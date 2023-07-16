@@ -23,19 +23,15 @@
 
 
 ## STRING VARIABLE
-name = "Bamiwo"
+    name = "Bamiwo"
 
-len(name) - lenght of name
+    len(name) - lenght of name
 
-name.capitalize() - capitalize the first word
-
-name.upper() - changes the string to uppercase
-
-name.lower() - change the string to lowercase
-
-name.isdigit() - checks if the string is digit
-
-name.isalpha() - checks if the string is alphabet
+    name.capitalize() - capitalize the first word
+    name.upper() - changes the string to uppercase
+    name.lower() - change the string to lowercase
+    name.isdigit() - checks if the string is digit
+    name.isalpha() - checks if the string is alphabet
 
 ## INTEGER VARIABLE
 age = 24
@@ -44,43 +40,34 @@ age = 24
 weight = 97.5
 
 ## MATH FUNCTION
-import math
+    import math
 
-math.ceil(weight) - round up
+    math.ceil(weight) - round up
+    math.floor(weight) - round down
+    math.pow(age, 2) - age raise to the power of 2
+    math.sqrt(age) - sqaure root
+    math.abs(age) - absolute of age
+    math.factorial(age) - factorial of age
 
-math.floor(weight) - round down
-
-math.pow(age, 2) - age raise to the power of 2
-
-math.sqrt(age) - sqaure root
-
-math.abs(age) - absolute of age
-
-math.factorial(age) - factorial of age
-
-max(x, y, z) - maximum of x, y, z
-
-min(x, y, z) - minimum of x, y, z
+    max(x, y, z) - maximum of x, y, z
+    min(x, y, z) - minimum of x, y, z
 
 
 ## SLICING IN PYTHON
 
 we can use slice(start,stop,step) or name[start:stop:step]
-name = "bamiwo"
+    name = "bamiwo"
 
-slice_name = name[1:3] - starts at index 1 and stop at index 3
+    slice_name = name[1:3] - starts at index 1 and stop at index 3
+    slice_name = name[]::2] - [0:end:2]output is bmw
+    slice_name = name[::-1] - [0:end:-1] will reverse the string
 
-slice_name = name[]::2] - [0:end:2]output is bmw
+    website = "http://google.com"
 
-slice_name = name[::-1] - [0:end:-1] will reverse the string
+    To get the word google using slice function
 
-website = "http://google.com"
-
-To get the word google using slice function
-
-slice_web = slice(7,-4)
-
-print(website[slice_web]) - output = google
+    slice_web = slice(7,-4)
+    print(website[slice_web]) - output = google
 
 ## INPUT IN PYTHON
 To accept input from the terminal
