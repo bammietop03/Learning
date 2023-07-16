@@ -1,5 +1,7 @@
-Learning python
+LEARNING PYTHON
+![image](https://github.com/bammietop03/Learning/assets/133250516/7c84d008-d255-45f4-aaa1-014fc346449c)
 
+```diff
 string variable
 name = "Bamiwo"
 
