@@ -1,9 +1,30 @@
-Learning python
+## LEARNING PYTHON
+![image](https://github.com/bammietop03/Learning/assets/133250516/7c84d008-d255-45f4-aaa1-014fc346449c)
 
-string variable
+## TABLE OF CONTENT
+* [Strings](#string-variable)
+* [Integers](#integer-variable)
+* [Floats](#float-variable)
+* [Slicing in python](#slicing-in-python)
+* [Input](#input-in-python)
+* [If and Else statement](#if-and-else-statement)
+* [logical operators](#logical-operator)
+* [While Loop](#while-loop)
+* [For Loop](#for-loop)
+* [Nested Loop](#nested-loop)
+* [Loop Controls](#loop-controls)
+* [List](#list-in-python)
+* [2D List](#2d-list)
+* [Tuples](#tuples-in-python)
+* [Set](#set-in-python)
+* [Dictionaries](#dictionaries-in-python)
+* [Index Opereator](#index-operator-in-python)
+
+
+
+## STRING VARIABLE
 name = "Bamiwo"
 
-functions
 len(name) - lenght of name
 name.capitalize() - capitalize the first word
 name.upper() - changes the string to uppercase
@@ -11,13 +32,13 @@ name.lower() - change the string to lowercase
 name.isdigit() - checks if the string is digit
 name.isalpha() - checks if the string is alphabet
 
-integer variable
+## INTEGER VARIABLE
 age = 24
 
-float variablr
+## FLOAT VARIABLE
 weight = 97.5
 
-To use math function
+## MATH FUNCTION
 import math
 
 math.ceil(weight) - round up
@@ -30,7 +51,7 @@ max(x, y, z) - maximum of x, y, z
 min(x, y, z) - minimum of x, y, z
 
 
-slicing in python
+## SLICING IN PYTHON
 
 we can use slice(start,stop,step) or name[start:stop:step]
 name = "bamiwo"
@@ -46,7 +67,7 @@ slice_web = slice(7,-4)
 
 print(website[slice_web]) - output = google
 
-input
+## INPUT IN PYTHON
 To accept input from the terminal
 input(what is your name: )
 
@@ -56,7 +77,7 @@ To store other types we use
 name = int(input(what is your name: ))
 name = float(input(what is your name: ))
 
-if and else statement
+## IF AND ELSE STATEMENT
 
 age = int(input("what is your age: "))
 
@@ -68,12 +89,12 @@ elif age < 20:
 else:
     print("You are 20")
 
-logical operators
+## LOGICAL OPERATOR
 
 and, or and not
 not(age > 20 and age < 50)
 
-while loop
+## WHILE LOOP
 name = None
 
 while not name:
@@ -84,7 +105,7 @@ or
 while name == "":  or len(name) == 0:
     name = input("what is your name")
 
-For loop
+## FOR LOOP
 it iterate for a limited amount of time
 
 for i in range(10):
@@ -102,7 +123,7 @@ for seconds in range(10,0,-1):
 
 print("Happy New Year!")
 
-NESTED LOOP
+## NESTED LOOP
 
 row = int(input("How many rows: "))
 columns = int(input("How many columns: "))
@@ -113,7 +134,7 @@ for i in range(row):
         print(symbol, end="")
     print()
 
-LOOP CONTROLS
+## LOOP CONTROLS
 break, continue and pass
 Break - is used to terminate the loop entirely
 Continue - is used to skip to the next iteration of the loop
@@ -140,7 +161,7 @@ for i in range(21):
     else:
         print(i, end="")
 
-LIST IN PYTHON
+## LIST IN PYTHON
 list is used to store multiple items in a single variable
 
 country = ["japan", "nigeria", "france", "spain", "china"]
@@ -149,17 +170,17 @@ country. to append, remove and more
 for x in country:
     print(x)
 
-2D LIST
+## 2D LIST
 country = ["japan", "nigeria", "france", "spain", "china"]
 food = ["garri", "yam", "mango"]
 drinks = ["viju", "coke", "water"]
 
 all = [country, food, drinks]
 
-#to print yam
+To print yam
 print(all[1][1])
 
-TUPLES IN PYTHON
+## TUPLES IN PYTHON
 tuples are collection which is ordered and uchangeable and are used to group together related data
 
 student = ("Bammie", 21, "male")
@@ -173,7 +194,7 @@ for x in student:
 if "Bammie" in student:
     print("Bammie is here")
 
-SET IN PYTHON
+## SET IN PYTHON
 Set are collection which is unorderd, unindexed. No duplicate values
 
 untensils = {"fork","spoon","knife"}
@@ -191,7 +212,7 @@ print(untensils.intersection(dishes))
 for x in untensils:
     print(x)
 
-DICTIONARIES IN PYTHON
+## DICTIONARIES IN PYTHON
 dictionaries is a changable, unorderd collection of unique key:value pairs
 fast because they use hashing, allow us to access a value quickly
 
@@ -209,12 +230,12 @@ print(capitals.get('Germany')) # will return None
 print(capitals.keys()) # will return all the keys
 print(capitals.values()) # will return all the values
 print(capitals.items()) #will return all the keys and values
-# or
+ or
 for key,value in capitals.items():
     print(key, value)
 
 
-INDEX OPERATOR IN PYTHON
+## INDEX OPERATOR IN PYTHON
 
 name = "bamiwo adebayo"
 
