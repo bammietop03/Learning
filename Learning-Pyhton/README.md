@@ -32,23 +32,43 @@
 ## STRING VARIABLE
     name = "Bamiwo"
 
-    len(name) - lenght of name
+    len(name) # lenght of name
 
     name.capitalize() - capitalize the first word
     name.upper() - changes the string to uppercase
     name.lower() - change the string to lowercase
     name.isdigit() - checks if the string is digit
     name.isalpha() - checks if the string is alphabet
+    name.find(B) - # returns the position of B (first occurence)
+    name.rfind(o) - # returns the position of o (last occurence) - r means reverse - will return -1 if not found
+    name.replace("B", "T") - # replaces B with T 
+
+    print(f"your name is {name}")
+
+    To print all the extension with str
+    print(help(str))
 
 ## INTEGER VARIABLE
-age = 24
+    age = 26
+
+    print("You are "+ str(age) + " years old")
+    print("You are", age, "years old")
+    print(f"You are {age} years old")
+
+    x, y, z = 1, 2, 3  #multiple assignment
+    x = y = z = 0  # sets all variable to 0
 
 ## FLOAT VARIABLE
 weight = 97.5
 
+To print only two decimal places
+    print(f"Your total is: ${round(total, 2)}")   # This will print total in two decimal places
+
 ## MATH FUNCTION
     import math
 
+    math.pi  # will provide the value of pi
+    math.e   # will provide the value of e
     math.ceil(weight) - round up
     math.floor(weight) - round down
     math.pow(age, 2) - age raise to the power of 2
@@ -59,6 +79,11 @@ weight = 97.5
     max(x, y, z) - maximum of x, y, z
     min(x, y, z) - minimum of x, y, z
 
+    ---------------
+    x = 4
+
+    x = x ** 2  # x to the power of two
+    or x **= 2
 
 ## SLICING IN PYTHON
 
@@ -77,6 +102,17 @@ we can use slice(start,stop,step) or name[start:stop:step]
     slice_web = slice(7,-4)
     print(website[slice_web]) - output = google
 
+Example 2
+
+    username = "bammietop@gmail.com"
+    at = username.index("@")
+
+    name = username[:at]
+    domain = username[at + 1:]
+
+    print(name)
+    print(domain)
+
 ## INPUT IN PYTHON
 To accept input from the terminal
 
@@ -89,9 +125,24 @@ To accept input from the terminal
     To store other types we use
 
     name = int(input(what is your name: ))
-    name = float(input(what is your name: ))
+    age = float(input(what is your name: ))
+
+    print(f"your name is {name}")
 
 ## IF AND ELSE STATEMENT
+We can use a condition or boolean value
+
+Boolean Value
+
+    online = True
+
+    if online:
+        print("The user is online")
+
+    else
+        print("The user is offline")
+
+Condition
 
     age = int(input("what is your age: "))
 
@@ -109,6 +160,11 @@ To accept input from the terminal
 and, or and not
 
 not(age > 20 and age < 50)
+
+    sunny = True
+
+    if not sunny:  #sunny becomes false
+        code here....
 
 ## WHILE LOOP
 
@@ -186,11 +242,13 @@ Example of Pass
             print(i, end="")
 
 ## LIST IN PYTHON
-list is used to store multiple items in a single variable
+list is used to store multiple items in a single variable (CAN DUPLICATE )
 
     country = ["japan", "nigeria", "france", "spain", "china"]
 
     country. to append, remove and more
+    print(dir(country)) #print all extension that can be used
+    print(help(country)) #for details
 
     for x in country:
         print(x)
@@ -204,9 +262,12 @@ list is used to store multiple items in a single variable
     print(all[1][1]) # prints yam
 
 ## TUPLES IN PYTHON
-tuples are collection which is ordered and uchangeable and are used to group together related data
+tuples are collection which is ordered and uchangeable and are used to group together related data (Can DUPLICATE and FASTER)
 
     student = ("Bammie", 21, "male")
+
+    print(dir(student)) #prints all extension
+    print(help(student)) #print more details
 
     print(student.count("Bammie"))
     print(student.index("male"))
@@ -218,10 +279,13 @@ tuples are collection which is ordered and uchangeable and are used to group tog
         print("Bammie is here")
 
 ## SET IN PYTHON
-Set are collection which is unorderd, unindexed. No duplicate values
+Set are collection which is unorderd, unindexed. No duplicate values , we can add and remove values
 
     untensils = {"fork","spoon","knife"}
     dishes = {"bowl", "plate","cup","knife"}
+
+    print(dir(dishes)) #prints all extension
+    print(help(dishes)) #print more details
 
     untensils.add("napkin")
     untensils.remove("spoon")
@@ -371,7 +435,41 @@ Usefull so that a function can accept a varying amount of kryword arguments
 
     def hello(**kwargs):
         print("Hello", end=" ")
-        for key,value in kwargs.item():
+        for key,value in kwargs.items():
             print(value, end=" ")
 
     hello(title="Mr.",first="Bamiwo",last="Adebayo")
+
+## FORMAT SPECIFIERS
+{value:flags} format a value based on what flags are inserted
+
+* .(number)f = round to that many decimal places (fixed point)
+* :(number) = allocate that many spaces
+* :03 = allocate and zero pad that many spaces
+* :< = left justify
+* :> = right justify
+* :^ = center align
+* :+ = use a plus sign to indicate positive value
+* := = place sign to leftmost position
+* : = insert a space before positive numbers
+* :, = comma seperator
+
+Examples
+    price1 = 3000.14159
+    price2 = -9870.65
+    price3 = 1200.34
+ 
+    print(f"price 1 is ${price1:.2f}")  #round the number to two decimal places
+    print(f"price 2 is ${price2:.1f}")  #round the number to one decimal places
+    print(f"price 3 is ${price3:.3f}")  #round the number to three decimal places
+
+    print(f"price 1 is ${price1:20}")  # the value will ocuppy 10 spaces, - output = '   3.14159'
+    print(f"price 1 is ${price1:020}") # the numbers are zero padded - output = 0003.14159
+    print(f"price 1 is ${price1:>20}") # spaces are justified right
+    print(f"price 1 is ${price1:<20}") # spaces are justified left
+    print(f"price 1 is ${price1:^20}") # value in the center with spaces right and left
+    print(f"price 1 is ${price1:+}")  # add positive sign to the number
+    print(f"price 1 is ${price1:-}")  # add negative value to the number
+    print(f"price 1 is ${price1:,}")  #add , in cases of thousands
+    print(f"price 1 is ${price1:+,.2f}")
+
