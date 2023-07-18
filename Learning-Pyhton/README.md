@@ -62,6 +62,7 @@
 weight = 97.5
 
 To print only two decimal places
+
     print(f"Your total is: ${round(total, 2)}")   # This will print total in two decimal places
 
 ## MATH FUNCTION
@@ -254,12 +255,24 @@ list is used to store multiple items in a single variable (CAN DUPLICATE )
         print(x)
 
 ## 2D LIST
+we can also create a 2d tuple and 2d set
+
     country = ["japan", "nigeria", "france", "spain", "china"]
     food = ["garri", "yam", "mango"]
     drinks = ["viju", "coke", "water"]
 
     all = [country, food, drinks]
     print(all[1][1]) # prints yam
+    or
+
+    all = [["japan", "nigeria", "france", "spain", "china"],
+            ["garri", "yam", "mango"],
+            ["viju", "coke", "water"]]
+    
+    for collection in all:
+        for x in collection:
+            print(x, end=" ")
+        print()
 
 ## TUPLES IN PYTHON
 tuples are collection which is ordered and uchangeable and are used to group together related data (Can DUPLICATE and FASTER)
@@ -308,6 +321,9 @@ fast because they use hashing, allow us to access a value quickly
                 'China':'Beijing',
                 'Russia':'Moscow'}
 
+    print(dir(capital)) #print all extension that can be used
+    print(help(capital)) #for details
+
     capitals.update({'Germany':'Berlin'}) # adds new item to the dictonary
     capitals.update({'USA':'Berlin'}) #changes the value of USA to berlin
     capitals.pop('China') # removes china from the dictionaries
@@ -322,6 +338,8 @@ fast because they use hashing, allow us to access a value quickly
 
     for key,value in capitals.items():
         print(key, value)
+
+EXAMPLES IN Shopping_cart.py
 
 
 ## INDEX OPERATOR IN PYTHON
@@ -455,6 +473,7 @@ Usefull so that a function can accept a varying amount of kryword arguments
 * :, = comma seperator
 
 Examples
+
     price1 = 3000.14159
     price2 = -9870.65
     price3 = 1200.34
