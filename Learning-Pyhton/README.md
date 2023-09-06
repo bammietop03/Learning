@@ -361,6 +361,9 @@ EXAMPLES IN Shopping_cart.py
 ## FUNCTIONS
 A function is a bolck of code which is executed only when it is called
 
+Function is a block of reusable code
+place () after the function name to invoke or call it
+
     def hello(name):
         print("Hello "+name)
         print("Have a nice day")
@@ -370,7 +373,7 @@ A function is a bolck of code which is executed only when it is called
 Passing two parameters
 
     def hello(first_name,last_name,age):
-        print("Hello "+first_name+" "+last_name)
+        print(f"Hello {first_name} {last_name}")
         print("YOur age is "+str(age)+" years old")
         print("Have a nice day")
 
@@ -399,6 +402,14 @@ python knows the names of the arguments that our function receives
         print("Hello "+first+" "+middle+" "+last)
 
     hello(last="Ade",first="Bammie",middle="moses")
+
+## DEFAULT ARGUMENTS
+
+    def net_price(list_price, discount=0, tax=0.05)
+        return list_price * (1 - discount) * (1 + tax)
+
+    print(net_price(500))
+    print(net_price(500, 2, 0.75)) the value for discount and tax will overwrite the default values
 
 ## NESTED FUNCTIONS CALLS
 Function calls inside other function calls
@@ -492,3 +503,263 @@ Examples
     print(f"price 1 is ${price1:,}")  #add , in cases of thousands
     print(f"price 1 is ${price1:+,.2f}")
 
+## MODULES
+A file containing code you want to include in your program
+use 'import' to include a module(built-in or your own)
+Usefull to break up  large program reusable seperate files
+
+    print(help("modules")) to print all the modules
+
+    import math  -- to import the whole module
+    import math as m -- import math with alias of m
+    e.g
+    print(math.pi) ----  import math example
+    print(m.pi) ---- import math as m example
+
+    we can also import a specific module within a module 
+    example:
+
+    from math import pi
+    e.g
+    print(pi) ---- now we can use only pi
+
+we can also create our own Module
+To create a module
+* Step 1: Create a python file in your working directory
+* Step 2: Add some code inside, maybe a function or variables
+* Step 3: import the file with "import filename"
+* Step 4: use the module with "filename. --- "
+
+## EXCEPTION
+exception =   events detected during execution that interrupt the flow of a program
+
+    try:
+        numerator = int(input("Enter a number to divide: "))
+        denominator = int(input("Enter a number to divide by: "))
+        result = numerator / denominator
+    except ZeroDivisionError as e:
+        print(e)
+        print("You can't divide by zero! idiot!")
+    except ValueError as e:
+        print(e)
+        print("Enter only numbers plz")
+    except Exception as e:
+        print(e)
+        print("something went wrong :(")
+    else:
+        print(result)
+    finally:
+        print("This will always execute")
+
+## FILE DETECTION
+    import os
+
+    path = "C:\\Users\\User\\Desktop\\test.txt"
+
+    if os.path.exists(path):
+        print("That location exists!")
+        if os.path.isfile(path):
+            print("That is a file")
+        elif os.path.isdir(path):
+            print("That is a directory!")
+    else:
+        print("That location doesn't exist!")
+
+## READ FILE
+    try:
+        with open('test.txt') as file:
+            print(file.read())
+    except FileNotFoundError:
+        print("That file was not found :(")
+
+## WRITE FILE
+    text = "Yooooooooo\nThis is some text\nHave a good one!\n"
+
+    with open('test.txt','w') as file:
+        file.write(text)
+
+## COPY FILE
+    # copyfile() =  copies contents of a file
+    # copy() =      copyfile() + permission mode + destination can be a directory
+    # copy2() =     copy() + copies metadata (file’s creation and modification times)
+
+    import shutil
+
+    shutil.copyfile('test.txt','copy.txt') #src,dst
+
+## MOVE FILE
+    import os
+
+    source = "C:\\Users\\User\\Desktop\\source.txt"
+    destination = "C:\\Users\\User\\Desktop\\destination.txt"
+
+    try:
+        if os.path.exists(destination):
+            print("There is already a file there")
+        else:
+            os.replace(source,destination)
+            print(source+" was moved")
+    except FileNotFoundError:
+        print(source+" was not found")
+
+## DELETE A FILE / DIRECTORY
+    import os
+    import shutil
+
+    path = "test.txt"
+
+    try:
+        os.remove(path)    #delete a file
+        #os.rmdir(path)     #delete an empty directory
+        #shutil.rmtree(path)#delete a directory containing files
+    except FileNotFoundError:
+        print("That file was not found")
+    except PermissionError:
+        print("You do not have permission to delete that")
+    except OSError:
+        print("You cannot delete that using that function")
+    else:
+        print(path+" was deleted")
+
+## OBJECT ORIENTED PROGRAMMING
+#------------------------------------------------------------------
+    from car import Car
+
+    car_1 = Car("Chevy","Corvette",2021,"blue")
+    car_2 = Car("Ford","Mustang",2022,"red")
+
+    car_1.drive()
+    car_2.stop()
+#------------------------------------------------------------------
+    class Car:
+
+        def __init__(self,make,model,year,color):
+            self.make = make
+            self.model = model
+            self.year = year
+            self.color = color
+
+        def drive(self):
+            print("This "+self.model+" is driving")
+
+        def stop(self):
+            print("This "+self.model+" is stopped")
+#------------------------------------------------------------------
+
+## CLASS VARIABLE
+#---------------------------------------------------------------------
+    from car import Car
+
+    car_1 = Car("Chevy","Corvette",2021,"blue")
+    car_2 = Car("Ford","Mustang",2022,"red")
+
+    #Car.wheels = 2
+
+    print(car_1.wheels)
+    print(car_2.wheels)
+#---------------------------------------------------------------------
+    class Car:
+
+        wheels = 4 #class variable
+
+        def __init__(self,make,model,year,color):
+            self.make = make    #instance variable
+            self.model = model  #instance variable
+            self.year = year    #instance variable
+            self.color = color  #instance variable
+#---------------------------------------------------------------------
+
+ ## INHERITANCE
+    class Animal:
+
+        alive = True
+
+        def eat(self):
+            print("This animal is eating")
+
+        def sleep(self):
+            print("This animal is sleeping")
+
+    class Rabbit(Animal):
+
+        def run(self):
+            print("This rabbit is running")
+
+    class Fish(Animal):
+
+        def swim(self):
+            print("This fish is swimming")
+
+    class Hawk(Animal):
+
+        def fly(self):
+            print("This hawk is flying")
+
+
+    rabbit = Rabbit()
+    fish = Fish()
+    hawk = Hawk()
+
+    print(rabbit.alive)
+    fish.eat()
+    hawk.sleep()
+
+    rabbit.run()
+    fish.swim()
+    hawk.fly()
+
+## MULTILEVEL INHERITANCE
+    # multi-level inheritance = when a derived (child) class inherits another derived (child) class
+
+    class Organism:
+
+        alive = True
+
+    class Animal(Organism):
+
+        def eat(self):
+            print("This animal is eating")
+
+    class Dog(Animal):
+
+        def bark(self):
+            print("This dog is barking")
+
+
+    dog = Dog()
+    print(dog.alive)    # inherited from the Organism class
+    dog.eat()           # inherited from the Animal class
+    dog.bark()          # defined in Dog class
+
+## MULTIPLE INHERITANCE
+    # -----------------------------------------------------------------------------
+    # multiple inheritance = when a child class is derived from more than one parent class
+
+    class Prey:
+
+        def flee(self):
+            print("This animal flees")
+
+    class Predator:
+
+        def hunt(self):
+            print("This animal is hunting")
+
+    class Rabbit(Prey):
+        pass
+
+    class Hawk(Predator):
+        pass
+
+    class Fish(Prey, Predator):
+        pass
+
+
+    rabbit = Rabbit()
+    hawk = Hawk()
+    fish = Fish()
+
+    # rabbit.flee()
+    # hawk.hunt()
+    fish.flee()
+    fish.hunt()

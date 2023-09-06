@@ -13,11 +13,3 @@ class Car:
 
     def stop(self):
         print(f"The {self.make} has stopped")
-
-car_1 = Car("Toyota","Camry","2021","Blue")
-
-
-print(car_1.wheels)
-
-car_1.drive()
-car_1.stop() 
