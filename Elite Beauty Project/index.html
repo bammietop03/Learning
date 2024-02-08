@@ -11,27 +11,33 @@
 </head>
 <body>
     <header>
-        <img class="logo" src="./images/Transparent.png" alt="logo">
-        <nav>
-            <ul class="navmenu">
-                <li><a href="#home">HOME</a></li>
+        <nav class="navbar2">
+            <ul class="sidebar">
+                <li onclick="hideSidebar()"><a href="#home"><svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" width="35"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
                 <li><a href="#">PHOTOGRAPY</a></li>
                 <li><a href="#">MAKEUP SERVICES</a></li>
                 <li><a href="#">ACADEMY</a></li>
                 <li><a href="#">SHOP</a></li>
-            </ul>
-       </nav>
-       <nav>
-            <ul class="navmenu">
                 <li><a href="#">ABOUT</a></li>
                 <li><a href="#">CONTACT US</a></li>
             </ul>
+        </nav>
+        <nav class="navbar">
+            <ul class="navmenu">
+                <li><img class="logo" src="./images/Transparent.png" alt="logo" width="100%" height="100%"></li>
+                <li class="hideonMoblie"><a href="#">PHOTOGRAPY</a></li>
+                <li class="hideonMoblie"><a href="#">MAKEUP SERVICES</a></li>
+                <li class="hideonMoblie"><a href="#">ACADEMY</a></li>
+                <li class="hideonMoblie"><a href="#">SHOP</a></li>
+                <li class="hideonMoblie"><a href="#">ABOUT</a></li>
+                <li class="hideonMoblie"><a href="#">CONTACT US</a></li>
+                <li onclick="showSidebar()" class="mobileMenu"><svg xmlns="http://www.w3.org/2000/svg" height="55" viewBox="0 -960 960 960" width="55"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></li>
+            </ul>
        </nav>
-
     </header>
     <section class="hero">
         <div class="hero-content">
-            <h1>Empowering Beauty, Inspiring<br> Confidence</h1>
+            <h1>Empowering Beauty, Inspiring Confidence</h1>
             <button class="button">BOOK NOW</button>
         </div>
     </section>
@@ -68,106 +74,110 @@
             </div>
         </div>
     </section>
-    <div>
-        <div>
-            <h4>Makeup</h4>
+    <div class="categories">
+        <div class="products one">
+            <h2>Makeup</h2>
             <p>At Elite Beauty Empire, we're not just about cosmetics; we're about self-expression, confidence, and the beauty in every brushstroke.</p>
-            <button>SHOP NOW</button>
+            <button class="button">SHOP NOW</button>
         </div>
-        <div>
-            <h4>Hair</h4>
+        <div class="products two">
+            <h2>Hair</h2>
             <p>With a curated selection of premium hair products, expert advice, and the latest trends, we're here to empower your hair journey.</p>
-            <button>SHOP NOW</button>
+            <button class="button">SHOP NOW</button>
         </div>
-        <div>
-            <h4>Fragrances</h4>
+        <div class="products three">
+            <h2>Fragrances</h2>
             <p>Explore our curated collection of exquisite perfumes, each a symphony of notes that evoke feelings, memories, and dreams.</p>
-            <button>SHOP NOW</button>
+            <button class="button">SHOP NOW</button>
         </div>
-        <div>
-            <h4>Accessories</h4>
+        <div class="products four">
+            <h2>Accessories</h2>
             <p>Dive into a realm of creativity and self-expression as you explore our handpicked collection of beauty accessories.</p>
-            <button>SHOP NOW</button>
+            <button class="button">SHOP NOW</button>
         </div>
-        <div>
-            <h4>Luxury Sets</h4>
+        <div class="products five">
+            <h2>Luxury Sets</h2>
             <p>Elite Beauty Empire offers an exclusive selection of sets that encompass the very essence of luxury.</p>
-            <button>SHOP NOW</button>
+            <button class="button">SHOP NOW</button>
         </div>
-        <div>
-            <h4>Gift Hampers</h4>
+        <div class="products six">
+            <h2>Gift Hampers</h2>
             <p>Each of our gift hampers is a story waiting to be told, a bundle of emotions crafted with care, and a source of delight for the receiver</p>
-            <button>SHOP NOW</button>
+            <button class="button">SHOP NOW</button>
         </div>
     </div>
-    <div>
-        <div>
-            <img src="./images/globe-free-img.png">
+    <div class="offers">
+        <div class="content_off">
+            <img src="./images/globe-free-img.png" width="50px" height="50px">
             <h3>Worldwide Shipping</h3>
             <p>From Anywhere to Everywhere Worldwide Shipping Excellence</p>
         </div>
-        <div>
-            <img src="./images/quality-free-img.png">
+        <div class="content_off">
+            <img src="./images/quality-free-img.png" width="50px" height="50px">
             <h3>Best Quality</h3>
             <p>Quality Beyond Measure, Satisfaction Guaranteed</p>
         </div>
-        <div>
-            <img src="./images/tag-free-img.png">
+        <div class="content_off">
+            <img src="./images/tag-free-img.png" width="50px" height="50px">
             <h3>Best Offers</h3>
             <p>Unbeatable Deals, Your Best Offer Awaits!</p>
         </div>
-        <div>
-            <img src="./images/lock-free-img.png">
+        <div class="content_off">
+            <img src="./images/lock-free-img.png" width="50px" height="50px">
             <h3>Secure Payments</h3>
             <p>Shop with Confidence, Your Payment, Our Security</p>
         </div>
     </div>
-    <div>
-        <div>
+    <div class="why">
+        <div class="why_content_diff">
             <h2><strong>Why Choose Elite Beauty Empire</strong></h2>
             <p>Choose Excellence, Choose Us</p>
         </div>
-        <div>
+        <div class="why_content">
             <h3><strong>Excellence is Our Standard</strong></h3>
             <p>We set the bar high and adhere to the principles of precision, quality, and excellence in everything we do. Our team of experts ensures that every client, student, or shopper receives nothing but the best.</p>
         </div>
-        <div>
+        <div class="why_content">
             <h3><strong>Customization and Personalization</strong></h3>
             <p>We understand that every person is unique. Our services are tailored to your individuality, ensuring that your beauty shines through in a way that's authentic to you.</p>
         </div>
-        <div>
+        <div class="why_content">
             <h3><strong>Passion and Dedication</strong></h3>
             <p>Our team is driven by an unyielding passion for beauty. We are committed to continuously honing our craft and staying at the forefront of industry makeup and photography trends.</p>
         </div>
-        <div>
+        <div class="why_content">
             <h3><strong>Empowerment</strong></h3>
             <p>Beyond making you look beautiful; we aim to empower you with the confidence to conquer the world. Beauty is not just about cosmetics; it's about feeling your best and seizing every opportunity.</p>
         </div>
-        <div>
+        <div class="why_content">
             <h3><strong>Community</strong></h3>
             <p>We believe that beauty is a community, and we invite you to be a part of it. Join us on a journey where you'll not only discover your own beauty but also inspire and uplift others.</p>
         </div>
         
     </div>
-
     <footer>
-        <div>
-            <img src="./images/Transparent.png" width="150" height="50">
-            <div>
+        <div class="footer">
+            <img class="footer_logo" src="./images/Transparent.png">
+            <div class="footer_service">
+                <h2>Service</h2>
                 <ul>
                     <li><a href="#">Makeup</a></li>
-                    <li><a href="#">photography</a></li>
-                    <li><a href="#">shopping</a></li>
+                    <li><a href="#">Photography</a></li>
+                    <li><a href="#">Shopping</a></li>
                     <li><a href="#">Beauty Academy</a></li>
                 </ul>
             </div>
-            <div>
+            <div class="sub">
                 <h2>Subscribe</h2>
-                <input type="text" placeholder="Your Email Address">
-                <button type="submit">Subscribe</button>
+                <input class="email" type="text" placeholder="Your Email Address...">
+                <br>
+                <button type="submit" class="button btn">Subscribe</button>
             </div>
         </div>
-        <P>Copyright © 2024 Elite Beauty Empire.</P>
+        <div class="main_footer">
+            <P>Copyright © 2024 Elite Beauty Empire.</P>
+        </div>
     </footer>
+    <script src="index.js"></script>
 </body>
 </html>

@@ -1,0 +1,122 @@
+.navbar {
+    background-color: rgba(0, 0, 0, 0.1);
+    position: absolute;
+    width: 100%;
+    
+}
+
+.navmenu {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.navmenu li {
+    height: 70px;
+}
+
+.navmenu a {
+    height: 100%;
+    padding: 0 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navmenu svg {
+    padding-top: 10px;
+    /* display: flex;
+    align-items: center; */
+}
+
+.navmenu a:hover {
+    color: #FF69B4;
+    transform: scale(1.1);
+}
+
+.navmenu li:first-child {
+    margin-right: auto;
+    padding-top: 5px;
+    cursor: pointer;
+}
+
+.mobileMenu {
+    fill: white;
+    cursor: pointer;
+    display: none;
+}
+
+.navbar2 {
+    background-color: white;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 250px;
+    z-index: 999;
+    background-color: rgba(255, 255, 255, 0.421);
+    backdrop-filter: blur(10px);
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    justify-content: flex-start;
+    /* align-items: center; */
+}
+
+.sidebar li {
+    height: 70px;
+    width: 100%;
+}
+
+.sidebar a {
+    height: 100%;
+    padding: 0 20px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: black;
+    transition: transform 0.3s ease-in-out;
+    width: 100%;
+}
+
+.sidebar a:hover {
+    color: #FF69B4;
+    transform: scale(1.1);
+}
+
+.sidebar li:first-child {
+    margin-right: auto;
+    padding-top: 5px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 900px){
+    .hideonMoblie {
+        display: none;
+    }
+
+    .logo {
+        width: 80%;
+        height: 80%;
+        padding-top: 5px;
+    }
+
+    .mobileMenu {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .sidebar {
+        width: 80%;
+    }
+}
